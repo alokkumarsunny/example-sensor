@@ -8,6 +8,4 @@ class SensorApplicationTests {
     @Test
     void contextLoads() {
     }
-
-
 }
