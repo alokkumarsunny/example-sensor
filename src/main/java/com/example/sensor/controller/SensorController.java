@@ -13,11 +13,6 @@ import java.util.List;
 @RestController
 public class SensorController {
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello, world!";
-    }
-
     private final SensorModelRepository sensorModelRepository;
     private final SensorService sensorService;
 
@@ -26,12 +21,12 @@ public class SensorController {
         this.sensorService = sensorService;
     }
 
-    @PostMapping("/sensors")
+    @PostMapping("/registerSensorData")
     public SensorModel createSensor(@RequestBody SensorModel sensorModel) {
         return sensorModelRepository.save(sensorModel);
     }
 
-    @GetMapping("/sensorsData")
+    @GetMapping("/getAllSensor")
     public List<SensorModel> getAllSensors() {
         return sensorService.getAllSensors();
     }
