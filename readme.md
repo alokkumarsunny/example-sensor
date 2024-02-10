@@ -64,6 +64,8 @@ The Sensor Data API is a RESTful service built with Spring Boot that allows user
 API documentation can be found using Swagger UI:
 - **Swagger UI**: [http://localhost:8080/api/swagger-ui.html](http://localhost:8080/api/swagger-ui.html)
 
+- **Postman Collection** Sensor-data.postman_collection.json can be found in root folder.
+
 ## Testing
 
 Unit and integration tests are included in the `src/test` directory. You can run the tests using Maven:
