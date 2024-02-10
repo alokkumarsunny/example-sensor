@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "91afbbab-f189-44e2-8260-4e12d633466d",
+		"name": "Sensor-data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32886306"
+	},
+	"item": [
+		{
+			"name": "registerData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sensorId\": \"7811088\",\r\n    \"tempValue\": 65,\r\n    \"tempUnit\": \"Celsius\",\r\n    \"humidityValue\": 120.0,\r\n    \"humidityUnit\": \"%\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/registerSensorData",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"registerSensorData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "avg-temp-all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sensors/average/temperature?startDate=2024-02-09&endDate=2024-02-11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sensors",
+						"average",
+						"temperature"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2024-02-09"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-02-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "avg-temp-for-a-sensor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sensors/7811088/average/temperature?startDate=2024-02-09&endDate=2024-02-11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sensors",
+						"7811088",
+						"average",
+						"temperature"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2024-02-09"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-02-11"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
